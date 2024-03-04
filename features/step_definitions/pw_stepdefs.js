@@ -9,13 +9,13 @@ Given("Bob opens Playwright website", { timeout: 60 * 1000 }, async function () 
     await this.openUrl(PW_URL);
 });
 
-When("Bob goes to Get started", async function () {
+When("Bob goes to {string}", async function (pageName) {
     // Click the get started link.
-    await this.page.getByRole('link', { name: 'Get started' }).click();
+    await this.page.getByRole('link', { name: pageName }).click();
 
 });
 
-Then("Bob sees Installation", async function () {
+Then("Bob sees {string}", async function (pageHeading) {
     // Expects page to have a heading with the name of Installation.
-    await expect(this.page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+    await expect(this.page.getByRole('heading', { name: pageHeading })).toBeVisible();
 });

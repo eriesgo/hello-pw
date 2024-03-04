@@ -3,5 +3,5 @@ Feature: Are we using Playwright
 
   Scenario: We use Playwright
     Given Bob opens Playwright website
-    When Bob goes to Get started
-    Then Bob sees Installation
+    When Bob goes to "Get started"
+    Then Bob sees "Installation"
